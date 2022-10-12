@@ -54,4 +54,13 @@ class TaskRepository
 		$id = $this->tasks->save($editedData);
 		return $id;
 	}
+
+	/**
+	 * Untuk hapus Task
+	 */
+	public function delete(array $dataToDelete)
+	{
+		$this->tasks->deleteQuery($dataToDelete);
+		return $dataToDelete["_id"];
+	}
 }
